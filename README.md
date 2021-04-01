@@ -1,2 +1,2 @@
 # Routine-Square
- A daily routine motivator.
+ A routine motivator that holds your 5 daily tasks.
