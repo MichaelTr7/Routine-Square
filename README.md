@@ -1,4 +1,6 @@
 # Routine-Square
  A routine motivator that holds your 5 daily tasks.
 
-<img src="./Preview Image.png" width="500">
+<p align="center">
+<img src="./Preview Image.png" width="50%"> <img src="./Preview Image 2.png" width="40%">
+</p>
