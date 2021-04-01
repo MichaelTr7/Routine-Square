@@ -1,0 +1,63 @@
+{
+  "name": "Routine-Square",
+  "productName": "Routine Squares",
+  "version": "1.0.0",
+  "description": "A daily routine motivator.",
+  "main": "App.js",
+  "author": "MichaelTr7",
+  "license": "MIT",
+  "homepage": "Routine_Square.com",
+  "build": {
+    "appId": "com.routinesquare.app",
+    "extraFiles": [
+      "Task_Data"
+    ],
+    "icon": "assets/MacOS_Icon.icns",
+    "directories": {
+      "output": "build"
+    },
+    "productName": "Routine Squares",
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "identity": null,
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "background": "assets/DMG_Background.tiff",
+      "icon": "assets/MacOS_Icon.icns",
+      "iconSize": 75,
+      "window": {
+        "width": 357,
+        "height": 200
+      },
+      "contents": [
+        {
+          "x": 89.25,
+          "y": 90
+        },
+        {
+          "x": 267.75,
+          "y": 90,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager ."
+  },
+  "dependencies": {
+    "electron-packager": "^15.2.0"
+  },
+  "devDependencies": {
+    "electron": "^12.0.2",
+    "electron-builder": "^22.10.5"
+  }
+}

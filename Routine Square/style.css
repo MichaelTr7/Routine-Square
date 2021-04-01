@@ -1,0 +1,260 @@
+body{
+  overflow: hidden;
+}
+
+:root {
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+  --Title_Bar_Height: 10%;
+  --Highlight_Colour: rgba(255, 96, 159, 0.3);
+  --Background_Colour: linear-gradient(180deg, #FEA7AF 0%, #E8B9FC 100%);
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+}
+
+button {
+  -webkit-app-region: no-drag;
+}
+
+*,
+*::after,
+*::before {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  cursor: default;
+}
+
+div::-webkit-scrollbar {
+  display: none;
+}
+
+div {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url('./Montserrat/Montserrat-Light.ttf');
+}
+
+#Main_Container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22.3rem;
+  width: 22.3rem;
+  border-radius: 0.6rem;
+  background: var(--Background_Colour);
+  filter: saturate(1.1);
+  box-shadow: inset 0 -0.5rem 0 0 rgba(0, 0, 0, 0.12), inset 0 0.1rem 0.2rem 0 rgba(255, 255, 255, 0.3);
+}
+
+#Title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.3);
+  height: var(--Title_Bar_Height);
+  top: 1%;
+  width: 100%;
+  font-weight: bold;
+}
+
+#Tasks_Container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 0.4rem;
+  position: relative;
+  --Height: 78%;
+  --Width: 85%;
+  height: var(--Height);
+  width: var(--Width);
+  top: 2%;
+  left: calc(50% - var(--Width)/2);
+}
+
+.Tasks {
+  /* height: 3.5rem; */
+  border-radius: 0.4rem;
+  overflow: hidden;
+  background-image: linear-gradient(205deg, rgba(255, 255, 255, 0.2) 50%, var(--Highlight_Colour) 50%);
+  background-size: 240% 100%;
+  background-position: 100% 0%;
+  transition: background-position 0.3s ease-out, transform 0.2s ease-out;
+  box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgba(0, 0, 0, 0.1), inset 0.05rem 0.05rem 0.05rem 0.04rem rgba(255, 255, 255, 0.1);
+}
+
+.Tasks_Completed_Swipe {
+  background-position: 0% 0%;
+}
+
+.Task_Names {
+  position: relative;
+  display: block;
+  --Height: 1rem;
+  --Padding: 0.3rem;
+  --Border: 1rem;
+  align-items: center;
+  top: calc(50% - var(--Height)/2 - var(--Padding) - var(--Border));
+  float: left;
+  margin-left: 0%;
+  height: var(--Height);
+  width: 13.7rem;
+  padding-top: var(--Padding);
+  padding-bottom: var(--Padding);
+  color: rgba(0, 0, 0, 0.3);
+  font-family: Helvetica;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  overflow: scroll;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  transition: 0.3s all;
+  border-radius: 0.65rem 20rem 20rem 0.65rem;
+  border-top: var(--Border) solid transparent;
+  border-bottom: var(--Border) solid transparent;
+  border-left: calc(var(--Border) + 0.2rem) solid transparent;
+  z-index: 1;
+}
+
+.Checkmarks_Containers {
+  position: relative;
+  float: right;
+  top: 0;
+  --Width: 20%;
+  height: 100%;
+  width: var(--Width);
+  z-index: 2;
+}
+
+.Checkmarks_Containers>button {
+  position: relative;
+  --Diameter: 1.8rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(50% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  border-radius: 100%;
+  border: none;
+  color: rgba(255, 255, 255, 0);
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 1.2rem;
+  transition: background-color 0.5s linear;
+}
+
+.Checkmarks_Containers>button>label {
+  color: rgba(255, 255, 255, 0);
+  transition: 0.5s all;
+}
+
+.Rotate_Animation {
+  animation: Rotate_Keyframes 0.2s linear forwards;
+}
+
+@keyframes Rotate_Keyframes {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Completed {
+  background: linear-gradient(45deg, rgba(255, 96, 159, 0.7) -20%, var(--Highlight_Colour) 120%);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+}
+
+.Task_Names:hover {
+  cursor: text;
+}
+
+.Task_Names:focus {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+#Completed_Check_Mark {
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12rem;
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  --Diameter: 15rem;
+  height: var(--Diameter);
+  width: var(--Diameter);
+  top: calc(47% - var(--Diameter)/2);
+  left: calc(50% - var(--Diameter)/2);
+  background-color: white;
+  border-radius: calc(var(--Diameter)/2);
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0.1rem 0.1rem 0.2rem 0rem rgba(0, 0, 0, 0.1), inset 0.02rem 0.02rem 0.05rem 0.04rem rgba(255, 255, 255, 0.2);
+  transition: 0.8s all ease-out;
+  transition-delay: 0.35s;
+}
+
+.Slide_Right_1 {
+  animation: Slide_Right 0.2s linear forwards;
+  animation-delay: 0s;
+}
+
+.Slide_Right_2 {
+  animation: Slide_Left 0.2s linear forwards;
+  animation-delay: 0.1s;
+}
+
+.Slide_Right_3 {
+  animation: Slide_Right 0.2s linear forwards;
+  animation-delay: 0.2s;
+}
+
+.Slide_Right_4 {
+  animation: Slide_Left 0.2s linear forwards;
+  animation-delay: 0.3s;
+}
+
+.Slide_Right_5 {
+  animation: Slide_Right 0.2s linear forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes Slide_Right {
+  to {
+    transform: translateX(150%)
+  }
+}
+
+@keyframes Slide_Left {
+  to {
+    transform: translateX(-150%)
+  }
+}
+
+#Completed_Label{
+  position: absolute;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --Height: 25%;
+  height: var(--Height);
+  width: 100%;
+  top: calc(100% - var(--Height));
+  font-family: Montserrat;
+  color: rgba(0,0,0,0.3);
+  z-index: 0;
+  transition: opacity 0.8s;
+}
+
+
+
+
+

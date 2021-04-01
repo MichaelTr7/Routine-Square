@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Routine Square</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="text/javascript" src="./index.js"></script>
+    <script type="text/javascript" src="./renderer.js"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  </head>
+
+  <body>    
+    <div id="Main_Container" style="-webkit-app-region: drag">
+      <div id="Title">Routine Square</div>
+      <div id="Tasks_Container" style="-webkit-app-region: no-drag">
+        <div class="Tasks">
+          <input id="Task_1" spellcheck="false" contenteditable="true" class="Task_Names" type="text" onfocus="this.setSelectionRange(this.value.length,this.value.length);" value="Task 1"></input>
+          <div class="Checkmarks_Containers">
+            <button data-state="0" id="Checkmark_1" type="button" name="button"><label>✓</label></button>
+          </div>
+        </div>
+        <div class="Tasks">
+          <input id="Task_2" spellcheck="false" contenteditable="true" class="Task_Names" type="text" onfocus="this.setSelectionRange(this.value.length,this.value.length);" value="Task 2"></input>
+          <div class="Checkmarks_Containers">
+            <button data-state="0" id="Checkmark_2" type="button" name="button"><label>✓</label></button>
+          </div>
+        </div>
+        <div class="Tasks">
+          <input id="Task_3" spellcheck="false" contenteditable="true" class="Task_Names" type="text" onfocus="this.setSelectionRange(this.value.length,this.value.length);" value="Task 3"></input>
+          <div class="Checkmarks_Containers">
+            <button data-state="0" id="Checkmark_3" type="button" name="button"><label>✓</label></button>
+          </div>
+        </div>
+        <div class="Tasks">
+          <input id="Task_4" spellcheck="false" contenteditable="true" class="Task_Names" type="text" onfocus="this.setSelectionRange(this.value.length,this.value.length);" value="Task 4"></input>
+          <div class="Checkmarks_Containers">
+            <button data-state="0" id="Checkmark_4" type="button" name="button"><label>✓</label></button>
+          </div>
+        </div>
+        <div class="Tasks">
+          <input id="Task_5" spellcheck="false" contenteditable="true" class="Task_Names" type="text" onfocus="this.setSelectionRange(this.value.length,this.value.length);" value="Task 5"></input>
+          <div class="Checkmarks_Containers">
+            <button data-state="0" id="Checkmark_5" type="button" name="button"><label>✓</label></button>
+          </div>
+        </div>
+      </div>
+
+      <div id="Completed_Check_Mark">✓</div>
+      <div id="Completed_Label">Completed</div>
+
+    </div>
+  </body>
+
+</html>
+
