@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-<a href="https://github.com/MichaelTr7/Routine-Square/releases/download/1.0.0/Routine.Squares-1.0.0.dmg">Download</a>
+<a href="https://github.com/MichaelTr7/Routine-Square/releases/download/1.0.0/Routine.Squares-1.0.0.dmg"><img src="./Button.png" width="20%"></a>
 </p>
 
 <p align="center"><b>A routine motivator that holds your 5 daily tasks</b><br>Resets checkmarks every midnight</p>
