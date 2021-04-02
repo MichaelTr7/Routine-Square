@@ -1,7 +1,7 @@
 # Routine-Square
 
 <p align="center">
-<img src="./MacOS_Icon.icns" width="20%">
+<img src="./Routine Square App Icon.png" width="20%">
 </p>
 
 
