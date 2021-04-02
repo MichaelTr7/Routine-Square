@@ -1,7 +1,7 @@
 # Routine-Square
 
 <p align="center">
-<img src="./Routine Square App Icon.png" width="20%">
+<img src="./Routine Square App Icon.png" width="10%">
 </p>
 
 
